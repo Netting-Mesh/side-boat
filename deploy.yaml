@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: side-boat 
+  labels:
+    name: side-boat 
+spec:
+  containers:
+  - name: side-boat 
+    image: side-boat:test-6
