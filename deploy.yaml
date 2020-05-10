@@ -1,10 +1,17 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: side-boat 
-  labels:
-    name: side-boat 
+  name: sideboat
 spec:
-  containers:
-  - name: side-boat 
-    image: side-boat:test-6
+  selector:
+    matchLabels:
+      run: sideboat
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: sideboat
+    spec:
+      containers:
+      - name: sideboat
+        image: sideboat:v10
